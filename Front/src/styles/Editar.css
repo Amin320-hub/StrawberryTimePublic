@@ -1,0 +1,114 @@
+@import url('./tool.css');
+
+.editar {
+    display: flex;
+    min-height: 100vh;
+    background-color: white;
+}
+
+/* Zona principal de edición */
+.editar-main {
+    flex: 1;
+    padding: 40px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editar-section {
+    width: 100%;
+    max-width: 500px;
+    padding: 3rem;
+    background-color: var(--color-principal);
+    border-radius: 8px;
+}
+
+.editar-section h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+/* Formulario */
+.form-editar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-editar,
+.select-editar {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease-in-out;
+    width: 100%;
+}
+
+.input-editar:disabled {
+    background-color: #ccc;
+    color: white;
+}
+
+.input-editar:focus,
+.select-editar:focus {
+    border-color: #3498db;
+}
+
+/* Botón editar */
+.boton-editar {
+    background-color: white;
+    color: var(--color-principal);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+    font-weight: bold;
+}
+
+.boton-editar:hover {
+    opacity: 0.85;
+}
+
+/* ===== Responsive: tablets ===== */
+@media (max-width: 768px) {
+    .editar {
+        flex-direction: column;
+    }
+
+    .editar-main {
+        padding: 20px;
+    }
+
+    .editar-section {
+        padding: 2rem;
+    }
+
+    .editar-section h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== Responsive: móviles ===== */
+@media (max-width: 480px) {
+    .editar-main {
+        padding: 15px;
+    }
+
+    .editar-section {
+        padding: 1.5rem;
+    }
+
+    .input-editar,
+    .select-editar {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+}

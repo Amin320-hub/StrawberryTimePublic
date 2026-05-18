@@ -1,0 +1,51 @@
+@import url('tool.css');
+.cargando-container {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.cargando-animation {
+  width: 120px;
+  height: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.cargando-texto {
+  display: block;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-principal);
+}
+
+.pelota {
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-principal);
+  animation: salto 0.5s alternate infinite ease-in-out;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.pelota:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.pelota:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes salto {
+  from {
+    transform: scaleX(1.25);
+  }
+  to {
+    transform: translateY(-50px) scaleX(1);
+  }
+}

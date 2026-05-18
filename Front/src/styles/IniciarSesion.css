@@ -1,0 +1,159 @@
+@import url('./tool.css');
+
+.iniciarSesion {
+    display: flex;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.iniciarSesion .logo {
+    width: 120px;
+    height: auto;
+    margin-top: 45px;
+}
+
+.iniciarSesion .boton-volver {
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.iniciarSesion main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.formulario-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario-iniciar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.input-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-contraseña {
+    width: 100%;
+    height: 50px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.input-contraseña:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.boton-iniciar {
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-principal);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-iniciar:hover {
+    background-color: #b8202e;
+}
+
+/* ===== Toggle empleado / admin ===== */
+.toggle-rol {
+    display: flex;
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.toggle-btn {
+    flex: 1;
+    height: 40px;
+    border: none;
+    background-color: white;
+    color: #888;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn.activo {
+    background-color: var(--color-principal);
+    color: white;
+    font-weight: bold;
+}
+
+.formulario-iniciar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* ===== Responsive: tablets ===== */
+@media (max-width: 768px) {
+    .iniciarSesion {
+        flex-direction: column;
+    }
+
+    .formulario-iniciar {
+        padding: 25px;
+    }
+
+    .admin-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* ===== Responsive: móviles ===== */
+@media (max-width: 480px) {
+    .formulario-iniciar {
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    .input-contraseña {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .boton-iniciar {
+        height: 45px;
+        font-size: 16px;
+    }
+}

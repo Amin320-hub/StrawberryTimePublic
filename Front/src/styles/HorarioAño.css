@@ -1,0 +1,121 @@
+.horario-anual-container {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header h1 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+.filtros {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.año-section {
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.año-nombre {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.meses-row, .horas-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  align-items: center;
+}
+
+.mes-header {
+  font-weight: bold;
+  padding: 8px 5px;
+  background-color: #eaeaea;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.hora-mes {
+  padding: 8px 5px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.total-row {
+  text-align: right;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  font-size: 16px;
+}
+
+.total-label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #7f8c8d;
+}
+
+.total-horas {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .meses-row, .horas-row {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+  }
+  
+  .empleado-section {
+    padding: 15px;
+  }
+  
+  .mes-header, .hora-mes {
+    font-size: 12px;
+    padding: 6px 3px;
+  }
+}
+
+@media (max-width: 600px) {
+  .meses-row, .horas-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .horario-anual-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .meses-row, .horas-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

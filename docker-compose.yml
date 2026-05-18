@@ -1,0 +1,66 @@
+services:
+
+  # ── Base de datos ──────────────────────────────────────
+  mysql:
+    image: mysql:8.0
+    container_name: fichador_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE:      ${MYSQL_DATABASE}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    # Sin "ports" → MySQL NO es accesible desde fuera de Docker
+    networks:
+      - fichador_net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost",
+             "-uroot", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ── Backend Node.js ────────────────────────────────────
+  backend:
+    build: ./Back
+    container_name: fichador_backend
+    restart: unless-stopped
+    environment:
+      DB_HOST:     mysql
+      DB_USER:     ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME:     ${MYSQL_DATABASE}
+      DB_PORT:     3306
+      JWT_SECRET:      ${JWT_SECRET}
+      PC_PASSWORD:     ${PC_PASSWORD}
+      ENCRYPTION_KEY:  ${ENCRYPTION_KEY}
+      QR_SECRET:       ${QR_SECRET}
+    depends_on:
+      mysql:
+        condition: service_healthy
+    # Sin "ports" → el backend no es accesible directo, solo a través de nginx
+    networks:
+      - fichador_net
+
+  # ── Frontend React + nginx ─────────────────────────────
+  frontend:
+    build:
+      context: ./Front
+      args:
+        VITE_API_URL: /api
+    container_name: fichador_frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"      # Acceso desde el navegador: http://IP-del-servidor
+    depends_on:
+      - backend
+    networks:
+      - fichador_net
+
+networks:
+  fichador_net:
+    driver: bridge
+
+volumes:
+  mysql_data:

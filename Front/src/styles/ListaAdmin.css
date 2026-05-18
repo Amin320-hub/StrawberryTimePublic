@@ -1,0 +1,123 @@
+@import url("./tool.css");
+
+.lista-admin {
+    display: flex;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.tituloListaAdmin {
+    color: var(--color-principal);
+    font-size: 24px;
+}
+
+.lista-admin-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+    min-width: 0;
+}
+
+.contenedor-tabla {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tabla-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contenedor-lista {
+    width: 100%;
+    max-height: 600px;
+    overflow-x: auto;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lista-admin .tabla-empleados {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lista-admin .tabla-empleados th,
+.lista-admin .tabla-empleados td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.lista-admin .tabla-empleados th {
+    background-color: var(--color-secondary);
+    color: var(--color-principal);
+    position: sticky;
+    top: 0;
+}
+
+.agregarEmpleado {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.agregarEmpleado:hover {
+    background-color: #337335;
+}
+
+.lista-admin .tabla-empleados tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* ===== Responsive: tablets ===== */
+@media (max-width: 768px) {
+    .lista-admin {
+        flex-direction: column;
+    }
+
+    .lista-admin-main {
+        padding: 15px;
+    }
+
+    .tabla-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tituloListaAdmin {
+        font-size: 20px;
+    }
+}
+
+/* ===== Responsive: móviles ===== */
+@media (max-width: 480px) {
+    .lista-admin-main {
+        padding: 10px;
+    }
+
+    .contenedor-lista {
+        max-height: 400px;
+    }
+
+    .lista-admin .tabla-empleados th,
+    .lista-admin .tabla-empleados td {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+}

@@ -1,0 +1,75 @@
+.dias-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 1000px;
+}
+
+.dias-nombre {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.dias-fecha {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.dias-registros {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dias-registros li {
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    color: #444;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.dias-registros li strong {
+    margin-right: 4px;
+    color: #222;
+}
+
+.dias-total {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: right;
+}
+
+.dias-sin-registros {
+    color: #999;
+    font-style: italic;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .dias-container {
+        padding: 12px;
+    }
+
+    .dias-registros li {
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px 10px;
+    }
+
+    .dias-nombre {
+        font-size: 16px;
+    }
+}

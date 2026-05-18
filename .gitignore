@@ -1,0 +1,15 @@
+# Variables de entorno — NUNCA subir a GitHub
+.env
+Back/.env
+Front/.env
+
+# Dependencias
+node_modules/
+Back/node_modules/
+Front/node_modules/
+
+# Build del frontend 
+Front/dist/
+
+# Logs
+*.log

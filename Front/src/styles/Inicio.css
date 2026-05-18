@@ -1,0 +1,131 @@
+@import url('./tool.css');
+
+.inicio {
+    display: flex;
+    width: 100%;
+    min-height: 100dvh;
+}
+
+.inicio-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.jornada-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-principal);
+    width: 100%;
+    max-width: 600px;
+    height: 80px;
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
+    color: white;
+    border-radius: 8px;
+}
+
+.lista-main {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.aside-right {
+    display: flex;
+    width: 200px;
+    flex-shrink: 0;
+    margin-right: 2rem;
+    padding: 1rem 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aside-right p {
+    display: flex;
+    align-self: flex-end;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.controles {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.controles button {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none;
+    -webkit-appearance: button;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* ===== Responsive: tablets ===== */
+@media (max-width: 768px) {
+    .inicio {
+        flex-direction: column;
+    }
+
+    .aside-right {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px auto;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .aside-right p {
+        display: none;
+    }
+
+    .controles {
+        flex-direction: row;
+        gap: 20px;
+        padding-bottom: 0;
+    }
+
+    .controles button {
+        width: 80px;
+        height: 80px;
+    }
+
+    .jornada-main {
+        height: 60px;
+    }
+
+    .lista-main {
+        max-height: 400px;
+    }
+}
+
+/* ===== Responsive: móviles ===== */
+@media (max-width: 480px) {
+    .controles button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .lista-main {
+        max-height: 300px;
+    }
+}

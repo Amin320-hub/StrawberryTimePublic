@@ -1,0 +1,81 @@
+.mes-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.mes-card {
+    flex: 1 1 300px;
+    max-width: 420px;
+    padding: 18px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+}
+
+.mes-nombre {
+    margin: 0 0 4px 0;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.mes-dni {
+    margin: 0 0 14px 0;
+    color: #888;
+    font-size: 13px;
+}
+
+.mes-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.mes-tabla th {
+    text-align: left;
+    padding: 6px 10px;
+    background-color: #eee;
+    color: #555;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+}
+
+.mes-tabla td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+
+.mes-tabla tr:last-child td {
+    border-bottom: none;
+}
+
+.mes-total {
+    text-align: right;
+    font-weight: bold;
+    color: #27ae60;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.mes-sin-registros {
+    color: #999;
+    font-style: italic;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .mes-card {
+        padding: 12px;
+        flex: 1 1 100%;
+    }
+
+    .mes-tabla th,
+    .mes-tabla td {
+        padding: 5px 8px;
+        font-size: 13px;
+    }
+}
