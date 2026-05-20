@@ -259,7 +259,7 @@ function DashboardEmpleado() {
                                     className={`btn-accion ${vistaHoras === v ? 'verde' : 'gris'}`}
                                     onClick={() => { setVistaHoras(v); setFiltroHoras(''); }}
                                 >
-                                    {v === 'dia' ? 'Dia' : v === 'mes' ? 'Mes' : v === 'ano' ? 'Ano' : 'Total'}
+                                    {v === 'dia' ? 'Dia' : v === 'mes' ? 'Mes' : v === 'ano' ? 'Año' : 'Total'}
                                 </button>
                             ))}
                         </div>

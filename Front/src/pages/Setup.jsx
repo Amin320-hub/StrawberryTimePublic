@@ -124,7 +124,7 @@ function Setup() {
                         </div>
                         <div className='input-container'>
                             <input className='input-contraseña' style={inputStyle} type='email' name='email_destino'
-                                placeholder='Email que recibe los backups (el jefe)' value={form.email_destino} onChange={handleChange} />
+                                placeholder='Email que recibe los backups' value={form.email_destino} onChange={handleChange} />
                         </div>
 
                         {error && <p className='error-message'>{error}</p>}
